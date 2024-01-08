@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel Example</title>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        /* Custom styles for the layout */
+        
+        .owl-carousel .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .owl-carousel .item img,
+        .owl-carousel .item .text {
+            transition: transform 0.5s ease;
+            transform: translateX(0);
+        }
+        
+        .owl-carousel .owl-item.active img {
+            transform: translateX(-100%);
+        }
+        
+        .owl-carousel .owl-item.active .text {
+            transform: translateX(100%);
+        }
+        
+        .owl-carousel .item img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .owl-carousel .item .text {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .owl-nav button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Your content goes here -->
+    <div class="owl-carousel">
+        <div class="item">
+            <div class="text">
+                <h3>Left Text 1</h3>
+                <p>Description or additional text here.</p>
+            </div>
+            <img src="./assets/imgs/bgOnion.svg" alt="Image 1">
+        </div>
+
+        <div class="item">
+            <div class="text">
+                <h3>Left Text 2</h3>
+                <p>Description or additional text here.</p>
+            </div>
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+
+    <!-- Owl Carousel JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Initialize Owl Carousel -->
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<button>&#8249;</button>", "<button>&#8250;</button>"]
+            });
+        });
+    </script>
+
+</body>
+
+</html>
